@@ -1,0 +1,17 @@
+{
+  "name": "coral-sdk",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fyx0730/coral-sdk.git"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "node-coral": "github:nathankellenicki/node-coral"
+  },
+  "devDependencies": {
+    "vite": "^8.0.11"
+  }
+}
