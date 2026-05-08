@@ -14,9 +14,10 @@ Use that URL in Snap or any page:
 
 ## Enable GitHub Pages
 
-1. Open **Settings → Pages** on this repo.
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Push to `main` (or merge) so [Deploy to GitHub Pages](.github/workflows/deploy-pages.yml) runs. When it succeeds, the URL above serves `coral.js` over HTTPS (required for Web Bluetooth).
+1. Push `main` so [Build and deploy to GitHub Pages](.github/workflows/deploy-pages.yml) runs. It publishes **`dist/`** to the **`gh-pages`** branch.
+2. Open **Settings → Pages** on this repo.
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch** (not “GitHub Actions”).
+4. **Branch**: `gh-pages`, folder **`/` (root)** → Save.
 
 ## Local build
 

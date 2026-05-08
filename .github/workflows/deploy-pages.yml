@@ -1,30 +1,28 @@
-# Build static bundle and publish to GitHub Pages.
-# Repo → Settings → Pages → Source: GitHub Actions
+# Build dist/coral.js and push to branch `gh-pages`.
 #
-# After deploy, the IIFE is available at:
+# GitHub → Settings → Pages:
+#   Source: Deploy from a branch
+#   Branch: gh-pages   /   folder: / (root)
+#
+# Public script URL:
 #   https://fyx0730.github.io/coral-sdk/coral.js
-# Use that URL in Snap (or any <script src="...">).
 
-name: Deploy to GitHub Pages
+name: Build and deploy to GitHub Pages
 
 on:
   push:
     branches: [main, master]
+  workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: gh-pages-deploy
+  cancel-in-progress: true
 
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,13 +35,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      # Vite outputs dist/coral.js — publish that folder as site root so the
-      # library URL has no extra /dist/ segment.
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v3
+      - name: Push dist/ to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-      - uses: actions/deploy-pages@v4
-        id: deployment
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
