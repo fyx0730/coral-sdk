@@ -1,6 +1,6 @@
 # coral-sdk
 
-Browser bundle for [node-coral](https://github.com/nathankellenicki/node-coral) (LEGO Coral / Web Bluetooth). Exposes `globalThis.Coral`, `SingleMotorDevice`, `DoubleMotorDevice`, `MotorDirection`, and `MotorPort`.
+Browser bundle for [node-coral](https://github.com/nathankellenicki/node-coral) (LEGO Coral / Web Bluetooth). Exposes `globalThis.Coral`, `CoralDeviceKind`, `SingleMotorDevice`, `DoubleMotorDevice`, `ControllerDevice`, `MotorDirection`, and `MotorPort`.
 
 ## Hosted script (after GitHub Pages is enabled)
 
@@ -27,3 +27,5 @@ npm run build
 ```
 
 Output: `dist/coral.js`. Serve the repo root (e.g. `npx serve`) and open `index.html` or `test.html`.
+
+Snap! 积木与多设备示例见 **[docs/snap-blocks.md](docs/snap-blocks.md)**。

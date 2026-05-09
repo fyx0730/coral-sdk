@@ -1,7 +1,9 @@
 import {
     Coral,
+    CoralDeviceKind,
     SingleMotorDevice,
     DoubleMotorDevice,
+    ControllerDevice,
     MotorDirection,
     MotorPort
 } from "node-coral/dist/web/index.js";
@@ -12,9 +14,13 @@ const g = globalThis;
 
 g.Coral = Coral;
 
+g.CoralDeviceKind = CoralDeviceKind;
+
 g.SingleMotorDevice = SingleMotorDevice;
 
 g.DoubleMotorDevice = DoubleMotorDevice;
+
+g.ControllerDevice = ControllerDevice;
 
 g.MotorDirection = MotorDirection;
 
