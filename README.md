@@ -1,6 +1,6 @@
 # coral-sdk
 
-Browser bundle for [node-coral](https://github.com/nathankellenicki/node-coral) (LEGO Coral / Web Bluetooth). Exposes `globalThis.Coral`, `CoralDeviceKind`, `SingleMotorDevice`, `DoubleMotorDevice`, `ControllerDevice`, `MotorDirection`, and `MotorPort`.
+Browser bundle for [node-coral](https://github.com/nathankellenicki/node-coral) (LEGO Coral / Web Bluetooth). Exposes `globalThis.Coral`, `CoralDeviceKind`, `SingleMotorDevice`, `DoubleMotorDevice`, `ControllerDevice`, `MotorDirection`, `MotorPort`, `MotionGesture`, and `createImuResetYawAxisCommand`.
 
 ## Hosted script (after GitHub Pages is enabled)
 
